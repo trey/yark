@@ -1,0 +1,12 @@
+---
+debug: true
+title: Yark
+subtitle: Web 1.0 Done Right
+owner: Trey Piepmeier
+email: trey@treypiepmeier.com
+admin_password: password
+domain: treypiepmeier.com
+
+# You can safely leave the rest of these fields alone:
+# ----------------------------------------------------
+date_format: l F jS, Y

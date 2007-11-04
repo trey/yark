@@ -1,0 +1,24 @@
+body {
+	font: 14px "Lucida Grande", sans-serif;
+	color: #555;
+	background: #fff;
+}
+h1 {
+	margin: 20px 50px;
+	font-size: 25px;
+	font-weight: bold;
+}
+p { margin: 10px 0; }
+#main {
+	margin: 20px;
+	line-height: 1.3em;
+}
+#main ul, #main ol { margin: 10px 0 10px 20px; }
+#main ul { list-style: disc; }
+#main ol { list-style: decimal; }
+code {
+	font-family: Courier, monospace;
+	padding: 0 3px;
+	color: #555;
+	background: #ddd;
+}

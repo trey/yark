@@ -1,0 +1,9 @@
+!!! Strict
+%html
+  %head
+    %title= $site['title'] . ': ' . $site['subtitle']
+    %meta{ :http-equiv => 'Content-Type', :content => 'text/html; charset=utf-8' }
+    %link{ :rel => 'stylesheet', :href => '/css/reset.css', :type => 'text/css', :media => 'all' }
+    %link{ :rel => 'stylesheet', :href => '/css/home.css',  :type => 'text/css', :media => 'all' }
+  %body
+    #main= $content
