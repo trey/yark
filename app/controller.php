@@ -3,7 +3,7 @@
 // TODO: somehow determine which template to use to render it (template_name)
 
 $template = $page;
-display_page($site, $section, $sub_section, $page, $template);
+display_page($section, $subsection, $page, $template);
 
 	// Section
 

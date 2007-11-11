@@ -2,14 +2,14 @@
 
 // Load $_GET variabes, if any.
 $section     = (isset($_GET['section']))     ? $_GET['section']     : '';
-$sub_section = (isset($_GET['sub_section'])) ? $_GET['sub_section'] : '';
+$subsection  = (isset($_GET['subsection']))  ? $_GET['subsection'] : '';
 $page        = (isset($_GET['page']))        ? $_GET['page']        : '';
 
 // If there is a section or sub-section, add a trailing slash.
-if (!empty($section))     $section     += '/';
-if (!empty($sub_section)) $sub_section += '/';
+if (!empty($section)) { $section .= '/'; }
+if (!empty($subsection)) { $subsection .= '/'; }
 // If $page is empty, use either 'home' or 'index'.
-if (empty($page)) $page = 'home';
+if (empty($page)) { $page = 'index'; }
 
 // ------------------------
 
@@ -32,5 +32,9 @@ require_once(BASE_PATH . '/vendor/haml/HamlParser.class.php');
 
 // Load configuration file
 $site = Spyc::YAMLLoad(BASE_PATH . '/config.yaml');
+
+define('SITE_TITLE', $site['title']);
+define('SITE_SUBTITLE', $site['subtitle']);
+define('SITE_DEBUG', $site['debug']);
 
 ?>
