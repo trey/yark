@@ -1,5 +1,18 @@
 <?php
 
+// Load $_GET variabes, if any.
+$section     = (isset($_GET['section']))     ? $_GET['section']     : '';
+$sub_section = (isset($_GET['sub_section'])) ? $_GET['sub_section'] : '';
+$page        = (isset($_GET['page']))        ? $_GET['page']        : '';
+
+// If there is a section or sub-section, add a trailing slash.
+if (!empty($section))     $section     += '/';
+if (!empty($sub_section)) $sub_section += '/';
+// If $page is empty, use either 'home' or 'index'.
+if (empty($page)) $page = 'home';
+
+// ------------------------
+
 // Get the base folder of the site and remove '/public' from the end of it.
 define("BASE_PATH", substr(getcwd(), 0, -7));
 
@@ -19,8 +32,5 @@ require_once(BASE_PATH . '/vendor/haml/HamlParser.class.php');
 
 // Load configuration file
 $site = Spyc::YAMLLoad(BASE_PATH . '/config.yaml');
-
-// Load old school procedural functions
-require_once('functions.php');
 
 ?>

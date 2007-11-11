@@ -12,5 +12,6 @@
 		<div id="main">	
 			<?php echo $content; ?>
 		</div><!-- #main -->
+	</div><!-- #wrapper -->
 </body>
 </html>

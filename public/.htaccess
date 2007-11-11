@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteBase /
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^.*$ - [S=40]
+	# If a trailing slash is omitted, add it.
+	RewriteRule ^(about|books|articles)?$ /$1/ [R]
+	# For any existing page, rewrite /page/ to page.php.
+	RewriteRule ^(about|books|articles)?/?$ /$1.php [L]
+	RewriteRule ^([A-Za-z0-9\_]+)?/?$ /index.php?page=$1 [QSA,L]
+	ErrorDocument 404 /404.php
+</IfModule>
