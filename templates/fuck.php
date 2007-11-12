@@ -1,1 +1,1 @@
-<?php require_once(TEMPLATE_PATH . '/' . 'index.php'); ?>
+<?php require_once(TEMPLATE_PATH . '/' . 'base.php'); ?>

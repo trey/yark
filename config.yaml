@@ -7,7 +7,7 @@ email: trey@treypiepmeier.com
 password: password
 domain: treypiepmeier.com
 # php or haml
-template_type: php
+template_type: haml
 
 # You can safely leave the rest of these fields alone:
 # ----------------------------------------------------

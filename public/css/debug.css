@@ -1,6 +1,15 @@
 #debug {
 	margin: 10px;
-	padding: 10px;
+	padding: 15px;
 	color: #444;
 	background: #aaa;
+	font: 12px Monaco, Courier, monospace;
+}
+#debug th {
+	text-align: right;
+	padding-right: 10px;
+}
+#debug small {
+	font-size: 11px;
+	color: #777;
 }
