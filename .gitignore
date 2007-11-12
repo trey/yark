@@ -2,4 +2,3 @@ w2wiki/*
 vendor/raw/*
 tmp/*
 .DS_Store
-content/*

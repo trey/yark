@@ -1,1 +1,1 @@
-<?php include('index.php'); ?>
+<?php require_once(TEMPLATE_PATH . '/' . 'index.php'); ?>

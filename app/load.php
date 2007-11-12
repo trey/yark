@@ -5,9 +5,6 @@ $section     = (isset($_GET['section']))     ? $_GET['section']     : '';
 $subsection  = (isset($_GET['subsection']))  ? $_GET['subsection'] : '';
 $page        = (isset($_GET['page']))        ? $_GET['page']        : '';
 
-// If there is a section or sub-section, add a trailing slash.
-if (!empty($section)) { $section .= '/'; }
-if (!empty($subsection)) { $subsection .= '/'; }
 // If $page is empty, use either 'home' or 'index'.
 if (empty($page)) { $page = 'index'; }
 

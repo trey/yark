@@ -9,7 +9,11 @@
 	<!--[if lte IE 7]><link rel="stylesheet" href="/css/iewin.css" type="text/css" media="screen"><![endif]-->
 </head>
 <body>
-	<?php if (SITE_DEBUG == 'true') echo $debug; ?>
+	<?php if (SITE_DEBUG == 'true') {
+		echo '<div id="debug">';
+		echo $debug;
+		echo '</div>';
+	} ?>
 	<div id="wrapper">
 		<div id="main">	
 			<?php echo $content; ?>
