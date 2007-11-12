@@ -1,1 +1,1 @@
-<?php include(BASE_PATH . '/' . 'base.php'); ?>
+<?php include(TEMPLATE_PATH . '/' . 'base.php'); ?>

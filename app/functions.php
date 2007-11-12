@@ -78,12 +78,6 @@ function display_page($section, $subsection, $page, $template, $page_path)
 EOT;
 	}
 
-	// Real page or error page?
-	if (empty($page_path)) {
-		header("HTTP/1.0 404 Not Found");
-		$template['name'] = 'base';
-		$page_path = 'errors/404';
-	}
 	// Generate HTML from Markdown + SmartyPants
 	$content = SmartyPants(Markdown(file_get_contents(CONTENT_PATH . '/' . $page_path . '.txt')));
 
