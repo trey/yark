@@ -33,5 +33,6 @@ $site = Spyc::YAMLLoad(BASE_PATH . '/config.yaml');
 define('SITE_TITLE', $site['title']);
 define('SITE_SUBTITLE', $site['subtitle']);
 define('SITE_DEBUG', $site['debug']);
+define('SITE_TEMPLATE_TYPE', $site['template_type']);
 
 ?>

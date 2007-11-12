@@ -5,11 +5,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="/css/reset.css" type="text/css" media="all">
 	<link rel="stylesheet" href="/css/home.css" type="text/css" media="all">
-	<?php if (SITE_DEBUG == 'true'): ?><link rel="stylesheet" href="/css/debug.css" type="text/css" media="all"><?php endif ?>
+	<?php if (SITE_DEBUG): ?><link rel="stylesheet" href="/css/debug.css" type="text/css" media="all"><?php endif ?>
 	<!--[if lte IE 7]><link rel="stylesheet" href="/css/iewin.css" type="text/css" media="screen"><![endif]-->
 </head>
 <body>
-	<?php if (SITE_DEBUG == 'true') {
+	<?php if (SITE_DEBUG) {
 		echo '<div id="debug">';
 		echo $debug;
 		echo '</div>';

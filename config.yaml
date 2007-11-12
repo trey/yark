@@ -6,6 +6,8 @@ owner: Trey Piepmeier
 email: trey@treypiepmeier.com
 password: password
 domain: treypiepmeier.com
+# php or haml
+template_type: php
 
 # You can safely leave the rest of these fields alone:
 # ----------------------------------------------------

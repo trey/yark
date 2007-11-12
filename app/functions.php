@@ -27,7 +27,7 @@ function find_page($section, $subsection, $page)
 function display_page($section, $subsection, $page, $template, $page_path)
 {
 	// Debug panel
-	if (SITE_DEBUG == 'true') {
+	if (SITE_DEBUG) {
 		$debug  = 'File: '. CONTENT_PATH . '/' . $page_path . '.txt';
 		$debug .= '<br>';
 		$debug .= 'Template: ' . TEMPLATE_PATH . '/' . $template . '.php';
@@ -48,7 +48,13 @@ function display_page($section, $subsection, $page, $template, $page_path)
 	// Generate HTML from Markdown + SmartyPants and feed it to Haml:
 	$content = SmartyPants(Markdown(file_get_contents(CONTENT_PATH . '/' . $page_path . '.txt')));
 
-	// display_haml(TEMPLATE_PATH . '/' . $template . '.haml', array($site, $content), HAML_TEMP_PATH);
-	include(TEMPLATE_PATH . '/' . $template . '.php');
+	switch (SITE_TEMPLATE_TYPE) {
+		case 'php':
+			include(TEMPLATE_PATH . '/' . $template . '.php');
+			break;
+		case 'haml':
+			display_haml(TEMPLATE_PATH . '/' . $template . '.haml', array(SITE_TITLE, SITE_SUBTITLE, $content), HAML_TEMP_PATH);
+			break;
+	}
 }
 ?>
