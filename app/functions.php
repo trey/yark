@@ -38,27 +38,33 @@ function find_template($section)
 			}
 			break;
 	}
-
+ 
 	return $template;
 }
 
-function find_page($section, $subsection, $page)
+function find_page($section, $subsection, $page_name)
 {
-	$page_path = '';
-	
 	// If there is a section or sub-section, add a trailing slash.
-	if (!empty($section))    $section    .= '/';
-	if (!empty($subsection)) $subsection .= '/';
+	if (!empty($section))    $section_path    = $section 	. '/';
+	if (!empty($subsection)) $subsection_path = $subsection . '/';
 	
-	$page_path = $section . $subsection . $page;
+	$page_path = $section_path . $subsection_path . $page_name;
 
 	// Check to see if the page exists
-	if (!file_exists(CONTENT_PATH . '/' . $page_path . '.txt')) $page_path = '';
+	if (file_exists(CONTENT_PATH . '/' . $page_path . '.txt')) {
+		$page['section'] = $section;
+		$page['subsection'] = $subsection;
+		$page['path'] = $page_path;
+	} else {
+		$page['section'] = 'error';
+		$page['path'] = 'errors/404';
+	}
+	$page['name'] = $page_name;
 	
-	return $page_path;
+	return $page;
 }
 
-function display_page($section, $subsection, $page, $template, $page_path)
+function display_page($template, $page)
 {
 	// Load the debug panel
 	if (SITE_DEBUG) {
@@ -67,22 +73,23 @@ function display_page($section, $subsection, $page, $template, $page_path)
 		// http://www.php.net/manual/en/language.types.string.php#74744
 		$debug = <<<EOT
 			<table>
-				<tr><th>File:</th><td>${const['CONTENT_PATH']}/$page_path.txt</td></tr>
+				<tr><th>File:</th><td>${const['CONTENT_PATH']}/${page['path']}.txt</td></tr>
 				<tr><th>Template:</th><td>${const['TEMPLATE_PATH']}/${template['name']}.${template['type']}</td></tr>
 				<tr><th>Template Type:</th><td>${const['SITE_TEMPLATE_TYPE']} <small>(Defined in config.yaml)</small></td><td></td></tr>
 				<tr><th>This Template:</th><td>${template['type']}</td></tr>
-				<tr><th>Section:</th><td>$section</td></tr>
-				<tr><th>Subsection:</th><td>$subsection</td></tr>
-				<tr><th>Page:</th><td>$page</td></tr>
+				<tr><th>Section:</th><td>${page['section']}</td></tr>
+				<tr><th>Subsection:</th><td>${page['subsection']}</td></tr>
+				<tr><th>Page:</th><td>${page['name']}</td></tr>
 			</table>
 EOT;
 	}
 
 	// Generate HTML from Markdown + SmartyPants
-	$content = SmartyPants(Markdown(file_get_contents(CONTENT_PATH . '/' . $page_path . '.txt')));
+	$content = SmartyPants(Markdown(file_get_contents(CONTENT_PATH . '/' . $page['path'] . '.txt')));
 
 	// Generate the page with PHP or Haml
 	switch ($template['type']) {
+		// TODO: Send proper 404 header if $page['section'] = 'error';
 		case 'php':
 			include(TEMPLATE_PATH . '/' . $template['name'] . '.php');
 			break;

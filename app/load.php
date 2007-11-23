@@ -3,10 +3,10 @@
 // Load $_GET variabes, if any.
 $section     = (isset($_GET['section']))     ? $_GET['section']    : '';
 $subsection  = (isset($_GET['subsection']))  ? $_GET['subsection'] : '';
-$page        = (isset($_GET['page']))        ? $_GET['page']       : '';
+$page_name   = (isset($_GET['page']))        ? $_GET['page']       : '';
 
 // If $page is empty, use 'index'.
-if (empty($page)) { $page = 'index'; }
+if (empty($page_name)) { $page_name = 'index'; }
 
 // Get the base folder of the site and remove '/public' from the end of it.
 define("BASE_PATH", substr(getcwd(), 0, -7));
