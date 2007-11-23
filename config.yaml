@@ -8,6 +8,13 @@ password: password
 domain: treypiepmeier.com
 # php or haml
 template_type: haml
+stats:
+  mint:
+    # Example: /mint/
+    location: /mint/
+  google:
+    # Example: UA-XXXXX-X
+    account: UA-97674-4
 
 # You can safely leave the rest of these fields alone:
 # ----------------------------------------------------
