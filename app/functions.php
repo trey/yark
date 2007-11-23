@@ -1,7 +1,7 @@
 <?php
 function find_template($page)
 {
-	if ($page['path'] = 'errors/404') $page['section'] = 'error';
+	if ($page['path'] == 'errors/404') $page['section'] = 'error';
 	
 	$php_exists = $haml_exists = false;
 	if (file_exists(TEMPLATE_PATH . '/' . $page['section'] . '.php'))  $php_exists  = true;
