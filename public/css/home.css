@@ -22,3 +22,9 @@ code {
 	color: #555;
 	background: #ddd;
 }
+blockquote {
+	margin-left: 20px;
+	padding-left: 15px;
+	border-left: 2px solid #ccc;
+	color: #888;
+}

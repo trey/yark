@@ -75,14 +75,20 @@ function display_page($template, $page)
 		$const = get_defined_constants();
 		// Because you can't use constants inside of heredoc strings
 		// http://www.php.net/manual/en/language.types.string.php#74744
+
+		// Display "(none)" for section and subsection if not defined.
+		$section    = (empty($page['section']))    ? '<small>(none)</small>' : $page['section'];
+		$subsection = (empty($page['subsection'])) ? '<small>(none)</small>' : $page['subsection'];
+
+		// Build the debug markup.
 		$debug = <<<EOT
 			<table>
 				<tr><th>File:</th><td>${const['CONTENT_PATH']}/${page['path']}.txt</td></tr>
 				<tr><th>Template:</th><td>${const['TEMPLATE_PATH']}/${template['name']}.${template['type']}</td></tr>
 				<tr><th>Template Type:</th><td>${const['SITE_TEMPLATE_TYPE']} <small>(Defined in config.yaml)</small></td><td></td></tr>
 				<tr><th>This Template:</th><td>${template['type']}</td></tr>
-				<tr><th>Section:</th><td>${page['section']}</td></tr>
-				<tr><th>Subsection:</th><td>${page['subsection']}</td></tr>
+				<tr><th>Section:</th><td>$section</td></tr>
+				<tr><th>Subsection:</th><td>$subsection</td></tr>
 				<tr><th>Page Name:</th><td>${page['name']}</td></tr>
 			</table>
 EOT;
@@ -91,9 +97,11 @@ EOT;
 	// Generate HTML from Markdown + SmartyPants
 	$content = SmartyPants(Markdown(file_get_contents(CONTENT_PATH . '/' . $page['path'] . '.txt')));
 
+	// If the page doesn't exist, send the proper 404 header before rendering the error page.
+	if ($page['path'] == 'errors/404') header('HTTP/1.0 404 Not Found');
+
 	// Generate the page with PHP or Haml
 	switch ($template['type']) {
-		// TODO: Send proper 404 header if $page['path'] = 'errors/404';
 		case 'php':
 			include(TEMPLATE_PATH . '/' . $template['name'] . '.php');
 			break;
@@ -101,7 +109,7 @@ EOT;
 			// Create $debug variable if it hasn't been set (debugging mode off)
 			if (empty($debug)) $debug = '';
 			$haml_array = array('title'    => SITE_TITLE,
-			 					'subtitle' => SITE_TITLE,
+								'subtitle' => SITE_TITLE,
 								'content'  => $content);
 			display_haml(TEMPLATE_PATH . '/' . $template['name'] . '.haml', array('content' => $content, 'debug' => $debug), HAML_TEMP_PATH);
 			break;
