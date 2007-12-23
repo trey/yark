@@ -1,0 +1,5 @@
+# All about this site
+
+This site sucks.
+
+That's why I used Yark instead of Django. :)
