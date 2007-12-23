@@ -3,6 +3,12 @@
 	RewriteBase /
 	RewriteCond %{REQUEST_FILENAME} -d
 	RewriteRule ^.*$ - [S=40]
+# FIXME Make this redirect to pretty URLs from the real query string.
+	RewriteRule ^/index.php?section=([A-Za-z0-9\_]+)$ /$1/ [R]
+	RewriteRule ^/index.php?section=([A-Za-z0-9\_]+)&page=([A-Za-z0-9\_]+)$ /$1/$2/ [R]
+	RewriteRule ^/?section=([A-Za-z0-9\_]+)$ /$1/ [R]
+	RewriteRule ^/?section=([A-Za-z0-9\_]+)&page=([A-Za-z0-9\_]+)$ /$1/$2/ [R]
+
 	RewriteRule ^([A-Za-z0-9\_]+)?$ /$1/ [R] # Add trailing slash
 	RewriteRule ^([A-Za-z0-9\_]+)?/?$ /index.php?section=$1 [QSA,L]
 	RewriteRule ^([A-Za-z0-9\_]+)/([A-Za-z0-9\_]+)$ /$1/$2/ [R] # Add trailing slash
