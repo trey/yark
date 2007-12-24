@@ -1,0 +1,6 @@
+/* --- DOUBLE-FLOAT MARGIN BUG --- */
+h1,
+#header ul,
+.left, .right {
+	display: inline;
+} 
