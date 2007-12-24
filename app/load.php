@@ -8,7 +8,9 @@ $page_name  = (isset($_GET['page']))       ? $_GET['page']       : '';
 if (empty($page_name)) $page_name = 'index';
 
 // Get the base folder of the site and remove '/public' from the end of it.
-define("BASE_PATH", substr(getcwd(), 0, -7));
+$haystack = getcwd();
+$needle   = '/public';
+define('BASE_PATH', substr(getcwd(), 0, strpos(getcwd(), '/public')));
 
 define('TEMPLATE_PATH',  BASE_PATH    . '/' . 'templates');
 define('CONTENT_PATH',   BASE_PATH    . '/' . 'content');
@@ -31,4 +33,5 @@ define('SITE_TITLE',         $site['title']);
 define('SITE_SUBTITLE',      $site['subtitle']);
 define('SITE_DEBUG',         $site['debug']);
 define('SITE_TEMPLATE_TYPE', $site['template_type']);
+define('YARK_PASSWORD',      $site['password']);
 ?>
