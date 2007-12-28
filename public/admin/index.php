@@ -10,7 +10,7 @@ if (!isset($_SESSION['password'])) {
 		$_SESSION['password'] = YARK_PASSWORD;
 	else {
 		// TODO login page
-		require_once('partials/login.php');
+		require_once('pages/login.php');
 		exit;
 	}
 }
