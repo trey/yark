@@ -3,9 +3,9 @@ debug: true
 title: Yark
 subtitle: Web 1.0 Done Right
 owner: Trey Piepmeier
-email: trey@treypiepmeier.com
+email: trey@example.com
 password: password
-domain: treypiepmeier.com
+domain: example.com
 # php or haml
 template_type: haml
 stats:
@@ -14,7 +14,7 @@ stats:
     location: /mint/
   google:
     # Example: UA-XXXXX-X
-    account: UA-97674-4
+    account: UA-XXXXX-X
 
 # You can safely leave the rest of these fields alone:
 # ----------------------------------------------------
