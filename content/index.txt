@@ -1,13 +1,3 @@
 # [![Yark](/img/yark.gif "Yark: Web 1.0 Done Right")](/)
 
-I'm keeping it much more simple this time.
-
-Might actually work out to a 1.0 before Christmas.
-
-- I don't know
-- What to think
-- I think it might rule.
-
-1. Waht
-1. about
-1. it?
+This is the home page.  Do with it what you will.
