@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><?php echo SITE_TITLE . ': ' . SITE_SUBTITLE; ?>
+</title>
+    <meta<?php $this->writeAttributes(array ('http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8')); ?> />
+    <link<?php $this->writeAttributes(array ('rel' => 'stylesheet', 'href' => '/css/reset.css', 'type' => 'text/css', 'media' => 'all')); ?> />
+    <link<?php $this->writeAttributes(array ('rel' => 'stylesheet', 'href' => '/css/home.css', 'type' => 'text/css', 'media' => 'all')); ?> />
+  </head>
+  <body>
+<?php if (SITE_DEBUG) { ?>
+    <div<?php $this->writeAttributes(array ('id' => 'debug')); ?>>
+      <?php echo $debug; ?>
+      
+    </div>
+<?php } ?>
+    <div<?php $this->writeAttributes(array ('id' => 'main')); ?>>
+      <?php echo $content; ?>
+      
+    </div>
+  </body>
+</html>
+

@@ -1,3 +1,4 @@
 w2wiki/*
 vendor/raw/*
 .DS_Store
+*.hphp
