@@ -4,4 +4,5 @@ Installation instructions:
 
 - Set your DocumentRoot to yark/public/
 - chmod 777 yark/tmp/haml
+- Do your thing in content/ and templates/
 - Bring. It. Around. Town.
