@@ -3,5 +3,5 @@ Yark: Web 1.0 Done Right
 Installation instructions:
 
 - Set your DocumentRoot to yark/public/
-- chmod 755 yark/tmp/haml
+- chmod 777 yark/tmp/haml
 - Bring. It. Around. Town.
