@@ -1,0 +1,197 @@
+body {
+	font: 14px "Lucida Grande", Arial, sans-serif;
+	border-top: 4px solid #A97B95;
+	color: #555;
+	background: #fff;
+}
+
+/* --- HEADER --- */
+h1 {
+	margin: 20px 50px;
+	float: left;
+	font-size: 25px;
+	font-weight: bold;
+}
+h1 small {
+	font-size: 18px;
+	color: #bbb;
+}
+#header {
+	border-top: 4px solid #DD95B8;
+}
+#header ul {
+	float: right;
+	margin: 12px;
+	font-size: 13px;
+}
+#header li {
+	display: inline;
+	padding: 0 5px;
+}
+
+/* --- LINKS --- */
+a {
+	padding-bottom: 1px;
+	border-bottom: 1px solid #bbb;
+	text-decoration: none;
+	color: #999;
+	background: #F3F3F3;
+}
+a:hover {
+	color: #666;
+}
+
+/* --- ADD / EDIT / DELETE LINKS --- */
+dd.add {
+	margin: 7px 0 7px 27px;
+}
+dt span,
+dd span {
+	font-size: 10px;
+}
+.edit a,
+.del a,
+.add a {
+	font-size: 10px;
+	color: #bbb;
+	border-color: #ddd;
+}
+.edit a:hover,
+.del a:hover,
+.add a:hover { color: #666; }
+
+/* --- MAIN CONTENT --- */
+h2 {
+	margin: 10px 0;
+	font-size: 16px;
+}
+h2 small {
+	font-size: 13px;
+}
+dd, dt {
+	margin: 3px 0;
+	border-bottom: 1px solid #fff;
+}
+dd {
+	margin-left: 20px;
+}
+dt.hover,
+dd.hover {
+	border-color: #ddd;
+}
+p { margin: 10px 0; }
+#main {
+	margin: 20px 50px;
+	line-height: 1.3em;
+}
+#main ul, #main ol { margin: 10px 0 10px 20px; }
+#main ul { list-style: disc; }
+#main ol { list-style: decimal; }
+code {
+	font-family: Courier, monospace;
+	padding: 0 3px;
+	color: #555;
+	background: #ddd;
+}
+blockquote {
+	margin-left: 20px;
+	padding-left: 15px;
+	border-left: 2px solid #ccc;
+	color: #888;
+}
+.meta {
+	margin: 10px 0 0;
+	font-size: 10px;
+	color: #bbb;
+}
+
+/* --- FORMS --- */
+textarea {
+	width: 400px;
+	height: 250px;
+}
+.buttons input {
+	font-size: 30px;
+}
+#login #password { width: 250px; }
+#login input#password,
+h2 input,
+textarea { border: 1px solid #ccc; }
+h2 input {
+	font-size: 16px;
+}
+#upload {
+	margin: 20px 0;
+	border-top: 1px solid #ddd;
+}
+#upload h3 {
+	margin: 10px 0;
+}
+#upload input {
+	color: #555;
+	font-size: 11px;
+}
+
+/* --- FOOTER --- */
+#footer {
+/*	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	height: 102px;*/
+	margin: 10px 50px;
+	padding: 90px 0 12px 69px;
+	font-size: 12px;
+	color: #999;
+	background: url(img/flower.gif) no-repeat 0 100%;
+}
+
+/* --- LOGIN PAGE --- */
+#login {
+	text-align: center;
+}
+#login #header {
+	margin: 0;
+	padding-top: 20px;
+}
+#login h1 {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+#login input {
+	font-size: 15px;
+}
+#login div.buttons input {
+	font-size: 30px;
+	color: #88385E;
+}
+#login form div {
+	margin: 20px 0;
+}
+#login label {
+	font-size: 20px;
+}
+
+/* (Select in the header for later?) */
+#header label {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+#header label,
+#header label select { font-size: 10px; }
+#header label select {
+	background: #eee;
+	border-color: #999;
+}
+
+/* --- GENERAL --- */
+
+#header:after,
+.floatclear:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}

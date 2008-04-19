@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<title>Yark Admin: Dashboard</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+	<!--[if lte IE 7]><link rel="stylesheet" href="css/iewin.css" type="text/css" media="screen"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6win.css" type="text/css" media="screen"><![endif]-->
+	<!--[if lte IE 5]><link rel="stylesheet" href="css/ie5win.css" type="text/css" media="screen"><![endif]-->
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/yark.js" type="text/javascript"></script>
+</head>
+<body>
+<form action="#" method="post">
+	<div id="header">
+		<h1><a href="/">Yark</a><small>: Dashboard</small></h1>
+		<ul>
+			<li><a href="#">Help</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</div><!-- #header -->
+	<div id="main">	
+		<div id="primary">
+			<h2>Site Map <span class="add"><a href="#add">+ Add new section</a></span></h2>
+			<dl id="sitemap">
+				<dt><a href="#edit">about/</a> <span class="del"><a href="#delete">- Delete this section (and all pages associated with it)</a></span><span>&nbsp;</span></dt>
+					<dd><a href="#edit">me</a> <span class="del"><a href="#delete">- Delete this page</a></span><span>&nbsp;</span></dd>
+					<dd><a href="#edit">colophon</a> <span class="del"><a href="#delete">- Delete this page</a></span><span>&nbsp;</span></dd>
+					<dd class="add"><a href="#add"><span>+</span> Add new page to this section</a><span>&nbsp;</span></dd>
+				<dt><a href="#edit">work/</a> <span class="del"><a href="#delete">- Delete this section (and all pages associated with it)</a></span><span>&nbsp;</span></dt>
+					<dd><a href="#edit">coolsite</a> <span class="del"><a href="#delete">- Delete this page</a></span><span>&nbsp;</span></dd>
+					<dd class="add"><a href="#add">+ Add new page to this section</a><span>&nbsp;</span></dd>
+			</dl>
+			<div id="upload">
+				<h3>Upload an image:</h3>
+				<input type="file" name="image" value="Select file" />
+			</div><!-- #upload -->
+		</div><!-- #primary -->
+		<div id="secondary">
+		</div><!-- #secondary -->
+	</div><!-- #main -->
+	<div id="footer">
+		<a href="#">Yark</a> 1.0 Copyright &copy; 2007-2008 Trey Piepmeier. All rights reserved.
+	</div><!-- #footer -->
+</form>	
+</body>
+</html>

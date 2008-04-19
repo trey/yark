@@ -1,0 +1,98 @@
+/*
+ * W2 stylesheet
+ *
+ * Copyright (C) 2007 Steven Frank <http://stevenf.com/>
+ * Code may be re-used as long as the above copyright notice is retained.
+ * See README.txt for full details.
+ */
+ 
+blockquote {
+	background-color: #f0f8f0;
+	margin: 0px 0px 12px 20px;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+}
+
+body {
+	font-family: Georgia;
+	font-size: 13px;
+	margin: 0;
+	border: 0;
+}
+
+h1 {
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+hr {
+	border-top: 1px solid #ccc;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+pre {
+	background-color: #eee;
+	margin: 0;
+	padding: 4px;
+	/* stroke each browser so that they wrap lines in the pre tag */
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+textarea {
+	font-family: Courier;
+}
+
+.main {
+	padding-top: 0px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+}
+
+.note {
+	background-color: #ffffe0;
+	padding: 4px;
+	margin: 4px;
+}
+
+.searchbar {
+	background-color: #ccddcc;
+	font-size: 12px;
+	padding: 4px;
+}
+
+.titlebar {
+	background-color: #ccddcc;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.toolbar {
+	background-color: #ddeedd;
+	font-size: 12px;
+	padding: 4px;
+}
+
+a.tool {
+	padding-right: 8px;
+	margin: 0;
+}
+
+a.tool:hover {
+}
